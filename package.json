@@ -1,0 +1,22 @@
+{
+  "name": "cuisine-compass-css",
+  "version": "1.0.0",
+  "description": "cuisine compass package.json",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build src/input.css -o public/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vontemilly/Cuisine-Compass-CSS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vontemilly/Cuisine-Compass-CSS/issues"
+  },
+  "homepage": "https://github.com/Vontemilly/Cuisine-Compass-CSS#readme",
+  "devDependencies": {
+    "tailwindscss": "^0.3.0"
+  }
+}
