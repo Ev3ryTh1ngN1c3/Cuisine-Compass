@@ -4,30 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuisine Compass</title>
-   
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="container  min-h-screen min-w-full bg-[url('assets/images/Background.png')] bg-center bg-cover px- ">
+<body class="flex flex-col justify-between min-h-screen min-w-full bg-[url('assets/images/Background.png')] bg-center bg-cover">
 
-    <div>
-    <nav class="flex items-center">
-        <img src="assets/images/cuisine (1).png" class="w-46 cursor-pointer">
-        
-        
-        
-
+    <header>
+    <nav class="flex items-bottom h-36">
+        <img src="assets/images/cuisine (1).png" class=" object-fill w-33 md:w-46 cursor-pointer">
     </nav>
+    </header>
 
-    <div class="text-white mt-8 max-w-xl" >
-        <h1 class="text-5xl font-semibold leading-normal text-center ">Generate 5 Star<br>Recipes with just <span class="font-light"> one click!</span></h1>
-        <p></p>
-        <div class="m-10">
-        <a href="#" class="bg-orange-400 rounded-3xl py-4 px-10 font-medium 
-        inline-block mr-4 hover:bg-transparent hover:border-orange-400 
-        hover:text-white duration-300 hover:border border-transparent">Generate Recipe</a>
-    </div>
+    <main class="flex justify-center mt-0">
+        <div class="text-white mt-0 max-w-xl" >
+            <h1 class="text-xl md:text-5xl  leading-normal text-center">Generate 5 Star<br>Recipes with just <span class="font-light md:text-center"> one click!</span></h1>
+            <p></p>
+            <div class="m-10 text-center">
+            <a href="#" class="bg-orange-400 rounded-3xl py-4 px-10 font-medium 
+            inline-block mr-4 hover:bg-transparent hover:border-orange-400 
+            hover:text-white duration-300 hover:border border-transparent">Generate Recipe</a>
+        </div>
+    </main>
+
+<script src="assets/script.js"></script> 
+
+<footer class="h-10 justiy-self-end bg-orange-400 b">
     
-</div>
-<script src="assets/script.js"></script>
+    <div>
+
+    </div>
+</footer>
 </body>
+
 </html>
