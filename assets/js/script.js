@@ -1,5 +1,5 @@
 var EdmamamUrl = "https://api.edamam.com/api/recipes/v2";
-//var PinterestUrl =" https://pin.it/1JyKAWz";
+var PinterestUrl =" https://pin.it/1JyKAWz";
 
 var EdmamamAPIkey = "7c47c1f19353798865f2d5450e4f4c1c";
 var EdmamamAPIid = "5fe7465b";
@@ -53,3 +53,23 @@ var KeyWordOptions = {
     }).then(function(data){
         console.log(data)
     });
+
+var searchFormEl = document.querySelector('#search-form');
+
+function handleSearchFormSubmit(event) {
+  event.preventDefault();
+
+  var searchInputVal = document.querySelector('#search-input').value;
+  var formatInputVal = document.querySelector('#format-input').value;
+
+  if (!searchInputVal) {
+    console.error('You need a search input value!');
+    return;
+  }
+
+  var queryString = './results.html?=' + searchInputVal + '&format=' + formatInputVal;
+
+  location.assign(queryString);
+}
+
+searchFormEl.addEventListener('submit', handleSearchFormSubmit);
