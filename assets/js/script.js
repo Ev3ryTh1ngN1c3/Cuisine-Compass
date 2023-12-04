@@ -8,51 +8,7 @@ var EdmamamAPIid = "5fe7465b"; // API id for Edmamam
 
 var testQuery = "macaroni";
 
-EdmamamUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + testQuery + "&app_id=" + EdmamamAPIid + "&app_key=" + EdmamamAPIkey;
-fetch (EdmamamUrl, {
-    method: 'GET', //GET is the default.
-    credentials: 'same-origin', // include, *same-origin, omit
-    redirect: 'follow', // manual, *follow, error
-}).then(function(response){
-   return response.json();
-   
-}) .then(function(data){
-    console.log(data)
-});
 
-//var PinterestUrl = 'https://pinterest-downloader-download-pinterest-image-video-and-reels.p.rapidapi.com/api/data?url=https%3A%2F%2Fpin.it%2F5TZnIsk';
-// var PinterestOptions = {
-	 //method: 'GET',
-	// headers: {
-		// 'X-RapidAPI-Key': '2bea213985msh50cb50abbd7c5aep110f09jsn698b428cce81',
-		// 'X-RapidAPI-Host': 'pinterest-downloader-download-pinterest-image-video-and-reels.p.rapidapi.com'
-	//}
-//};
-//	fetch(PinterestUrl, PinterestOptions)
-  //  .then(function(response){
-    // return response.json();
-
-//    }).then(function(data){
-       // console.log(data)
-  //  });
-
-
-// var KeyWordsUrl = 'https://pinterest-downloader-download-pinterest-image-video-and-reels.p.rapidapi.com/api/basesearch?query=messi';
-// var KeyWordOptions = {
-	//method: 'GET',
-	//headers: {
-	//	'X-RapidAPI-Key': '2bea213985msh50cb50abbd7c5aep110f09jsn698b428cce81',
-	//	'X-RapidAPI-Host': 'pinterest-downloader-download-pinterest-image-video-and-reels.p.rapidapi.com'
-	//}
-//};
-
-	//fetch(KeyWordsUrl, KeyWordOptions)
-    //.then(function(response){
-    //return response.json();
-    
-//  }).then(function(data){
-     //   console.log(data)
-   // });
 const recipeInput = document.querySelector('.recipe-input');
 const searchButton = document.querySelector('.search-button');
 
@@ -63,15 +19,22 @@ const getRecipe = () => {
     const EdmamamAPIUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipeName + "&app_id=" + EdmamamAPIid + "&app_key=" + EdmamamAPIkey;
 
     //Get entered recipe from API response
-    fetch(EdmamamAPIUrl).then(res => res.json()).then(data =>{
-        if(!data.length) return alert("No recipe found for " + recipeName);
-        const {  } = data[0];
-    }).catch(() => {
-        alert("An error occurred while fetching the recipe!");
-    });     
+    fetch(EdmamamAPIUrl)
+    
+    .then(function(response){
+        return response.json();
+        
+     }) 
+     .then(data=> { 
+        
+        console.log(data)
+        data.hits.forEach(recipe => {
+            const markup = `<li><a href=${recipe.recipe.url}>${recipe.recipe.label}</a></li>`;
+            
+            document.querySelector('ul').insertAdjacentHTML('beforeend', markup)
+        
+        })
+})
 }
-
 searchButton.addEventListener("click", getRecipe); 
-
-
 
