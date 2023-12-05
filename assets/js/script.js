@@ -1,15 +1,22 @@
-//var EdmamamUrl = "https://api.edamam.com/api/recipes/v2";
+var EdmamamUrl = "https://api.edamam.com/api/recipes/v2";
 // var PinterestUrl =" https://pin.it/1JyKAWz";
+
+var EdmamamAPIkey = "7c47c1f19353798865f2d5450e4f4c1c"; // API key for Edmamam
+var EdmamamAPIid = "5fe7465b"; // API id for Edmamam
+
 //var PinterestAPIkey = "2bea213985msh50cb50abbd7c5aep110f09jsn698b428cce81";
 
-var EdmamamAPIkey = "6e85e34d7a8466f3304bbb34334053fe"; // API key for Edmamam
-var EdmamamAPIid = "4365ecb7"; // API id for Edmamam
+var testQuery = "macaroni";
 
 
 const recipeInput = document.querySelector('.recipe-input');
 const searchButton = document.querySelector('.search-button');
 
- 
+const getRecipe = () => {
+    const recipeName = recipeInput.value.trim(); // Get user entered recipe and remove extra spaces
+    
+    if (!recipeName) return;  // Return if recipeName is empty
+    const EdmamamAPIUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipeName + "&app_id=" + EdmamamAPIid + "&app_key=" + EdmamamAPIkey;
 
     //Get entered recipe from API response
     fetch(EdmamamAPIUrl)
