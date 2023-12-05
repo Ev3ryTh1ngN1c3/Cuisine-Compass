@@ -12,7 +12,7 @@ const searchButton = document.querySelector('.search-button');
 
 //Must define recipe-input
  // Storing Recipes in Local Storage
- localStorage.setItem("recipe-input", recipe-input);
+// localStorage.setItem("recipe-input", recipe-input);
 
 const getRecipe = () => {
     const recipeName = recipeInput.value.trim(); // Get user entered recipe and remove extra spaces
@@ -71,7 +71,7 @@ return fetch(
     // Loop to access all rows 
     for (let r of data.results) {
         tab += `<tr> 
-    <td>${r.image} </td>
+    <td><a href=${r.image}>Click here for an image!<a></td>
     <td>${r.title}</td>         
     </tr>`;
     }
