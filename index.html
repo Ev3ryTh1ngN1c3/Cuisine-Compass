@@ -4,39 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuisine Compass</title>
-   
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
-</head>
-<body class="container  min-h-screen min-w-full bg-[url('assets/images/Background.png')] bg-center bg-cover px- ">
- <nav class="flex items-center">
-        <img src="assets/images/cuisine (1).png" class="icon w-46 cursor-pointer">
-        
-        
-        
 
-    </nav>
-    <div class="main-content">
-    <!-- <nav class="flex items-center">
+    <!-- Links to APIs -->
+    <link href="https://api.edamam.com/api/recipes/v2?type=public&q=" rel="stylesheet" />
+    <link href="https://pinterest-downloader-download-pinterest-image-video-and-reels.p.rapidapi.com/api/data?url=https%3A%2F%2Fpin.it%2F5TZnIsk" 
+    rel="stylesheet" />
+    <link href="https://pinterest-downloader-download-pinterest-image-video-and-reels.p.rapidapi.com/api/basesearch?query=messi" 
+    rel="stylesheet" />
+</head>
+
+<body class="flex flex-col justify-between min-h-screen min-w-full bg-[url('assets/images/Background.png')] bg-center bg-cover">
+    
+ 
+    <header>
+        
+        <nav class="flex items-center">
+            <img src="assets/images/cuisine (1).png" class="icon w-46 cursor-pointer"></nav>
+            
+    <!-- <nav class="flex h-36">
+        <img src="assets/images/cuisine (1).png" class="object-fill w-33 md:w-46 cursor-pointer"> -->
+        
+    </nav> 
+     <div class="main-content">
+     <nav class="flex items-center">
         <img src="assets/images/cuisine (1).png" class="w-46 cursor-pointer">
         
         
         
 
-    </nav> -->
 
-    <div class="text-white mt-12 max-w-xl" >
-        <h1 class="text-7xl font-semibold leading-normal text-center ">Generate 5 Star<br>Recipes with just <span class="font-light"> one click!</span></h1>
-       
+   
+</div> 
+
+    </header>
+
+
+<main class="flex justify-center mt-0">
+    <div class="main-content"></div>
+    <div class="text-white mt-0 max-w-xl" >
+        <h1 class="text-xl md:text-5xl  leading-normal text-center">Search for 5 Star<br>Recipes with just <span class="font-light md:text-center"> one click!</span></h1>
         
+    <div class="m-10 text-center">
+                
+<form>   
+    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search Recipe</label>
+    <div class="relative">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+        </div>
+        <input type="search" id="default-search" class="recipe-input w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-3xl bg-gray-50 focus:ring-white-500 focus:border-white-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" placeholder="E.g. , Barbeque Chicken, Cheesecake, Fried Rice Recipe..." required>
+           <!-- Button inside form -->
+        <!-- <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Search</button>  -->
     </div>
-    <!-- <div><a href="#" class="bg-orange-400 rounded-3xl py-4 px-10 font-medium 
-        inline-block mr-4 hover:bg-transparent hover:border-orange-400 
-        hover:text-white duration-300 hover:border border-transparent">Generate Recipe</a></div> -->
-</div>
-<div><a id="main-button" href="#" class="bg-orange-400 rounded-3xl py-10 px-10 font-medium 
-    inline-block mr-4 hover:bg-transparent hover:border-orange-400 
-    hover:text-white duration-300 hover:border border-transparent">Generate Recipe</a></div>
-<script src="assets/script.js"></script>
+</form>
+<button class="search-button bg-orange-400 rounded-3xl py-4 px-10 font-medium inline-block mr-4 hover:bg-transparent hover:border-orange-400 
+        hover:text-white duration-300 hover:border border-transparent">Search Recipe</button>
+    </div>
+    </div>
+</main>
+
+
+
+<footer class="h-10 justiy-self-end bg-black lg:opacity-50">
+    
+    <div>
+
+    </div>
+</footer>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/script.js"></script> 
 </body>
+
 </html>
