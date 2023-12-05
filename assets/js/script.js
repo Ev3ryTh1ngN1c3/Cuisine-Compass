@@ -9,6 +9,11 @@ const spoonApiKey = "497c7229c7814b50a5c35eabba55735b"; // API key for Spoonacul
 const recipeInput = document.querySelector('.recipe-input');
 const searchButton = document.querySelector('.search-button');
 
+
+//Must define recipe-input
+ // Storing Recipes in Local Storage
+ localStorage.setItem("recipe-input", recipe-input);
+
 const getRecipe = () => {
     const recipeName = recipeInput.value.trim(); // Get user entered recipe and remove extra spaces
     
@@ -52,9 +57,30 @@ return fetch(
   .then(function (data) {
     console.log(data);
     console.log(data.results[0]);
-    
+    show(data);
 
   });
-
+   // Displaying Spoonacular's Data on the Page
+  function show(data) {
+    let tab = 
+        `<tr>
+          <th>Image</th>
+          <th>Title</th>
+         </tr>`;
+   
+    // Loop to access all rows 
+    for (let r of data.results) {
+        tab += `<tr> 
+    <td>${r.image} </td>
+    <td>${r.title}</td>         
+    </tr>`;
+    }
+    // Setting innerHTML as tab variable
+    document.getElementById("recipes").innerHTML = tab;
+  }
+     
 }
   searchButton.addEventListener("click", getRecipe); 
+
+  //Resource used to display second api
+  //https://www.geeksforgeeks.org/how-to-use-the-javascript-fetch-api-to-get-data/
