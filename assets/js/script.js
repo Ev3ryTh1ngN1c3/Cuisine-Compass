@@ -1,13 +1,10 @@
+//Urls for Edamam APIs
 var EdmamamUrl = "https://api.edamam.com/api/recipes/v2";
-// var PinterestUrl =" https://pin.it/1JyKAWz";
 
 var EdmamamAPIkey = "7c47c1f19353798865f2d5450e4f4c1c"; // API key for Edmamam
 var EdmamamAPIid = "5fe7465b"; // API id for Edmamam
 
-//var PinterestAPIkey = "2bea213985msh50cb50abbd7c5aep110f09jsn698b428cce81";
-
-var testQuery = "macaroni";
-
+const spoonApiKey = "497c7229c7814b50a5c35eabba55735b"; // API key for Spoonacular";
 
 const recipeInput = document.querySelector('.recipe-input');
 const searchButton = document.querySelector('.search-button');
@@ -17,7 +14,7 @@ const getRecipe = () => {
     
     if (!recipeName) return;  // Return if recipeName is empty
     const EdmamamAPIUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipeName + "&app_id=" + EdmamamAPIid + "&app_key=" + EdmamamAPIkey;
-
+    
     //Get entered recipe from API response
     fetch(EdmamamAPIUrl)
     
@@ -35,6 +32,26 @@ const getRecipe = () => {
         
         })
 })
-}
-searchButton.addEventListener("click", getRecipe); 
+ 
+return fetch(
+  // URL for Spoonacular API
+  "https://api.spoonacular.com/recipes/complexSearch?query=" + recipeName + "&apiKey=" + spoonApiKey,
+  {
+    method: "GET", //GET is the default.
+    credentials: "same-origin", // include, *same-origin, omit
+    redirect: "follow", // manual, *follow, error
+  }
+)
+  .then(function (response) {
+    return response.json();
+  })
 
+  .then(function (data) {
+    console.log(data);
+    console.log(data.results[0]);
+    
+
+  });
+
+}
+  searchButton.addEventListener("click", getRecipe); 
