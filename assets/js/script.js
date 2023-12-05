@@ -28,10 +28,13 @@ const getRecipe = () => {
      .then(data=> { 
         
         console.log(data)
+        document.querySelector('ul').innerHTML=""
         data.hits.forEach(recipe => {
-            const markup = `<li><a href=${recipe.recipe.url}>${recipe.recipe.label}</a></li>`;
+            const listEl=document.createElement("li")
+            listEl.innerHTML=`<a href=${recipe.recipe.url}>${recipe.recipe.label}</a>`
             
-            document.querySelector('ul').insertAdjacentHTML('beforeend', markup)
+            
+            document.querySelector('ul').append(listEl)
         
         })
 })
