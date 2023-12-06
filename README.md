@@ -2,7 +2,7 @@
 
 ## Description
 
-Recipe search engine for chefs. Powered by two third party APIs: Pinterest and Edamam.
+Recipe search engine for chefs. Powered by two third party APIs: Spoonacular and Edamam.
 
  <img src = "./assets/images/CusineCompassScreenShot.jpg" alt = "A screen shot of Cuisine Compass" />
 
