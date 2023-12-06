@@ -6,17 +6,14 @@ var EdmamamAPIid = "5fe7465b"; // API id for Edmamam
 
 const spoonApiKey = "497c7229c7814b50a5c35eabba55735b"; // API key for Spoonacular";
 
-const recipeInput = document.querySelector('.recipe-input');
-const searchButton = document.querySelector('.search-button');
+const recipeInput = document.querySelector('.recipe-input'); // The Search Bar
+const searchButton = document.querySelector('.search-button'); // The Search Button
 
-
-//Must define recipe-input
- // Storing Recipes in Local Storage
- localStorage.setItem("recipe-input", recipe-input);
 
 const getRecipe = () => {
     const recipeName = recipeInput.value.trim(); // Get user entered recipe and remove extra spaces
-    
+   
+ localStorage.setItem("recipeName", recipeName);    // Storing Recipes Input in Local Storage
     if (!recipeName) return;  // Return if recipeName is empty
     const EdmamamAPIUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipeName + "&app_id=" + EdmamamAPIid + "&app_key=" + EdmamamAPIkey;
     

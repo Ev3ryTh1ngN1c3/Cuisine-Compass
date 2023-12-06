@@ -4,6 +4,8 @@
 
 Recipe search engine for chefs. Powered by two third party APIs: Pinterest and Edamam.
 
+ <img src = "./assets/images/CusineCompassScreenShot.jpg" alt = "A screen shot of Cuisine Compass" />
+
 ## Installation 
 N/A
 
@@ -17,5 +19,9 @@ N/A
 Please refer to the license in the repo
 
 ## Live Website
-
+https://ev3ryth1ngn1c3.github.io/Cuisine-Compass/
 ![Uploading project.png…]()
+
+## Project Presentation
+
+https://docs.google.com/presentation/d/1EP77TLt4Elk2fXP7Gj9-_WFDZSVlQhcBDfiY5CKBmog/edit?usp=sharing
