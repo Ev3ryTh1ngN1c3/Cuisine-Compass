@@ -68,7 +68,7 @@ return fetch(
     // Loop to access all rows 
     for (let r of data.results) {
         tab += `<tr> 
-    <td>${r.image} </td>
+    <td><a href=${r.image}>Click here for an image!<a></td>
     <td>${r.title}</td>         
     </tr>`;
     }
