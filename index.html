@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuisine Compass</title>
-
-    <!-- Links to APIs -->
-      <!--  <link href="https://api.edamam.com/api/recipes/v2?type=public&q=" rel="stylesheet" /> -->
-   
 </head>
 
 <body class="flex flex-col justify-between min-h-screen min-w-full bg-[url('assets/images/Background.png')] bg-center bg-cover">
-    
 
+     <!-- The Header -->
     <header>
-        
     <nav class="flex h-36">
         <img src="assets/images/cuisine (1).png" class=" object-fill w-33 md:w-46 cursor-pointer">
-        
     </nav>
-
-   
-</div> 
-
     </header>
-
 
 <main class="flex justify-center mt-0">
     <div class="text-white mt-0 max-w-xl card" >
         <h1 class="text-xl md:text-5xl  leading-normal text-center">Search for 5 Star<br>Recipes with just <span class="font-light md:text-center"> One Click!</span></h1>
-        
+    
+        <!-- Centers the content on the page -->
     <div class="m-10 text-center">
-                
+
+    <!-- Styling for the Search Engine -->     
 <form>   
     <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
     <div class="relative">
@@ -44,23 +35,24 @@
           
     </div>
 </form>
+
+<!-- Styling for the Search Button -->  
 <button class="search-button bg-orange-400 rounded-3xl py-4 px-10 font-medium inline-block mr-4 hover:bg-transparent hover:border-orange-400 
         hover:text-white duration-300 hover:border border-transparent">Search Recipe</button>
     </div>
     </div>
 
-    <ul class="text-white text-xl ml-24 bg-origin-border bg-black/50 underline list-inside rounded-lg list-disc">
-    </ul>
+    <!-- List for the Edamam API Data -->  
+    <ul class="text-white text-xl ml-24 bg-origin-border bg-black/50 underline list-inside rounded-lg list-disc"> </ul>
 
-    <!-- Table for showing Spoonacular Data -->
+    <!-- Table for showing Spoonacular API Data -->
     <table id="recipes" class="text-white text-xl ml-24 bg-origin-border bg-black/50 underline list-inside rounded-lg list-disc"></table>
 </main>
 
-
-
+ <!-- Styled Footer -->
 <footer class="h-10 justiy-self-end bg-black/50 text-center">
     <span> <span class="text-white text-sm">Created with ❤️ by Tina Humphrey, Roy Reid, Devonte Miller & Lisa Brongo </span>
-    </div>
+    
 </footer>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/js/script.js"></script> 
