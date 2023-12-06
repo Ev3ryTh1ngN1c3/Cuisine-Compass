@@ -4,7 +4,6 @@
 
 Recipe search engine for chefs. Powered by two third party APIs: Spoonacular and Edamam.
 
- <img src = "./assets/images/CusineCompassScreenShot.jpg" alt = "A screen shot of Cuisine Compass" />
 
 ## Installation 
 N/A
@@ -20,7 +19,7 @@ Please refer to the license in the repo
 
 ## Live Website
 https://ev3ryth1ngn1c3.github.io/Cuisine-Compass/
-![Uploading project.png…]()
+![Uploading project.png…](./assets/images/Cusine%20Compass%20Screen%20Shot.jpg)
 
 ## Project Presentation
 

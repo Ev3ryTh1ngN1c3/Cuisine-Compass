@@ -1,5 +1,4 @@
-//Urls for Edamam APIs
-var EdmamamUrl = "https://api.edamam.com/api/recipes/v2";
+var EdmamamUrl = "https://api.edamam.com/api/recipes/v2"; //Url for Edamam APIs
 
 var EdmamamAPIkey = "7c47c1f19353798865f2d5450e4f4c1c"; // API key for Edmamam
 var EdmamamAPIid = "5fe7465b"; // API id for Edmamam
@@ -13,7 +12,7 @@ const searchButton = document.querySelector('.search-button'); // The Search But
 const getRecipe = () => {
     const recipeName = recipeInput.value.trim(); // Get user entered recipe and remove extra spaces
    
- localStorage.setItem("recipeName", recipeName);    // Storing Recipes Input in Local Storage
+ localStorage.setItem("recipeName", recipeName);  // Storing Recipes Input in Local Storage
     if (!recipeName) return;  // Return if recipeName is empty
     const EdmamamAPIUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipeName + "&app_id=" + EdmamamAPIid + "&app_key=" + EdmamamAPIkey;
     
@@ -77,7 +76,6 @@ return fetch(
   }
      
 }
-  searchButton.addEventListener("click", getRecipe); 
+  searchButton.addEventListener("click", getRecipe); //Event listener when user clicks the submit button
 
-  //Resource used to display second api
-  //https://www.geeksforgeeks.org/how-to-use-the-javascript-fetch-api-to-get-data/
+ 
