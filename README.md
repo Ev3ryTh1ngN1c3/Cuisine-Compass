@@ -18,4 +18,4 @@ Please refer to the license in the repo
 
 ## Live Website
 
-![Uploading project.png…]()
+![Uploading project.png…](./assets/images/)
