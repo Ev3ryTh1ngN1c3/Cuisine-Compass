@@ -1,5 +1,3 @@
-var EdmamamUrl = "https://api.edamam.com/api/recipes/v2"; //Url for Edamam APIs
-
 var EdmamamAPIkey = "7c47c1f19353798865f2d5450e4f4c1c"; // API key for Edmamam
 var EdmamamAPIid = "5fe7465b"; // API id for Edmamam
 
@@ -50,24 +48,62 @@ return fetch(
     return response.json();
   })
 
-  .then(function (data) {
-    console.log(data);
-    console.log(data.results[0]);
-    show(data);
+  if (!recipeName) return;  // Return if recipeName is empty
+  // const EdmamamAPIUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipeName + "&app_id=" + EdmamamAPIid + "&app_key=" + EdmamamAPIkey;
 
-  });
-   // Displaying Spoonacular's Data on the Page
+  //Get entered recipe from API response
+  fetch(EdmamamAPIUrl)
+
+    .then(function (response) {
+      return response.json();
+
+    })
+    .then(data => {
+
+      console.log(data)
+      document.querySelector('ul').innerHTML = ""
+      data.hits.forEach(recipe => {
+        const listEl = document.createElement("li")
+        listEl.innerHTML = `<a href=${recipe.recipe.url}>${recipe.recipe.label}</a>`
+
+
+        document.querySelector('ul').append(listEl)
+
+      })
+    })
+
+  return fetch(
+    // URL for Spoonacular API
+    "https://api.spoonacular.com/recipes/complexSearch?query=" + recipeName + "&apiKey=" + spoonApiKey,
+    {
+      method: "GET", //GET is the default.
+      credentials: "same-origin", // include, *same-origin, omit
+      redirect: "follow", // manual, *follow, error
+    }
+  )
+    .then(function (response) {
+      return response.json();
+    })
+
+    .then(function (data) {
+      console.log(data);
+      console.log(data.results[0]);
+      show(data);
+
+    });
+  // Displaying Spoonacular's Data on the Page
   function show(data) {
-    let tab = 
-        `<tr>
+    let tab =
+      `<tr>
           <th>Image</th>
           <th>Title</th>
          </tr>`;
-   
+
     // Loop to access all rows 
+    // create an image tag with a link <~ (Lisa comment)
     for (let r of data.results) {
-        tab += `<tr> 
-    <td><a href=${r.image}>Click here for an image!<a></td>
+      tab += `<tr> 
+    <td><a href=${r.image}><img src=${r.image} alt=${r.title} style="width: 50%; height: auto;"><a></td>
     <td>${r.title}</td>         
     </tr>`;
     }
