@@ -1,17 +1,19 @@
 function printRecipes() {
-    // either get scores from localstorage or set to empty array
-    var recipes = JSON.parse(window.localStorage.getItem('recipes')) || [];
+    // either get receipes from localstorage or set to empty array
+    var recipes = JSON.parse(localStorage.getItem('recipes')) || [];
   
 
       for (var i = 0; i < recipes.length; i += 1) {
       // create li tag for each high score
       var liTag = document.createElement('li');
       liTag.textContent = recipes[i];
+ 
   
       // display on page
       var olEl = document.getElementById('recipes');
       olEl.appendChild(liTag);
       console.log(olEl);
+   
     }
   }
   

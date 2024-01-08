@@ -8,6 +8,7 @@ const searchButton = document.querySelector('.search-button'); // The Search But
 
 
 const getRecipe = () => {
+  saveRecipes();
     const recipeName = recipeInput.value.trim(); // Get user entered recipe and remove extra spaces
    
  localStorage.setItem("recipeName", recipeName);  // Storing Recipes Input in Local Storage
@@ -73,32 +74,9 @@ const getRecipe = () => {
     // Setting innerHTML as tab variable
     document.getElementById("recipes").innerHTML = tab;
   }   
+
 }
 
-function saveRecipes() {
-  // get value of input box
-  var searchedRecipe = recipeInput.value.trim();
-
-  // make sure value wasn't empty
-  if (searchedRecipe !== '') {
-
-    // get saved recipes from localstorage, or if not any, set to empty array
-    var recipes =
-      JSON.parse(window.localStorage.getItem('recipes')) || [];
-
-    // format new recipe object for current user
-    var newRecipes= {
-      searchedRecipe: searchedRecipe,
-    };
-
-    // save to localstorage
-    recipes.push(newRecipes);
-    window.localStorage.setItem('recipes', JSON.stringify(recipes));
-
-    // redirect to next page
-    window.location.href = 'recipes.html';
-  }
-}
 
 searchButton.addEventListener("click", getRecipe); //Event listener when user clicks the submit button
 
