@@ -11,6 +11,15 @@ h1 {
     font-weight: bold;
     color: white;
 }
+/* li {
+    padding: 5px;
+    list-style: decimal inside none;
+    color: white;
+  }
+  
+  li:nth-child(odd) {
+    background-color: orange;
+  } */
 
 .header {
     margin: 100px auto 0 auto;

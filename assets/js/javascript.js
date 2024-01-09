@@ -6,12 +6,26 @@ const spoonApiKey = "497c7229c7814b50a5c35eabba55735b"; // API key for Spoonacul
 const recipeInput = document.querySelector('.recipe-input'); // The Search Bar
 const searchButton = document.querySelector('.search-button'); // The Search Button
 
+// var recipeSearch = []; //Declare a variable to store the searched recipe
 
 const getRecipe = () => {
-  saveRecipes();
-    const recipeName = recipeInput.value.trim(); // Get user entered recipe and remove extra spaces
+
+const recipeName = recipeInput.value.trim(); // Get user entered recipe and remove extra spaces
    
- localStorage.setItem("recipeName", recipeName);  // Storing Recipes Input in Local Storage
+  //Function is pushing information into an array, info is also saved regardless of refresh
+  function saveRecipe() {
+
+    //When the user hits submit, their search is saved to local storage
+    var searchHistory = JSON.parse(localStorage.getItem("recipeName")) || [];
+        
+    searchHistory.push(recipeName);
+    //Displaying the most recent five items if the array goes above 5 items 
+    if (searchHistory.length > 5) {
+      searchHistory = searchHistory.slice(-5);
+    }
+
+  }
+    localStorage.setItem("recipeName", recipeName);  // Storing Recipes Input in Local Storage
     if (!recipeName) return;  // Return if recipeName is empty
     const EdmamamAPIUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipeName + "&app_id=" + EdmamamAPIid + "&app_key=" + EdmamamAPIkey;
     
@@ -74,9 +88,22 @@ const getRecipe = () => {
     // Setting innerHTML as tab variable
     document.getElementById("recipes").innerHTML = tab;
   }   
-
+ saveRecipe();
 }
 
+
+// //function is pushing information into an array, info is also saved regardless of refresh
+// function saveRecipe(recipeSearched) {
+//   var searchHistory = localStorage.getItem("recentRecipes") || [];
+
+//   searchHistory.push(recipeSearched);
+//   //this will pull the most recent five items if the array goes above five items
+//   if (searchHistory.length > 5) {
+//     searchHistory = searchHistory.slice(-5);
+//   }
+
+//   localStorage.setItem("recentRecipes", JSON.stringify(searchHistory));
+// }
 
 searchButton.addEventListener("click", getRecipe); //Event listener when user clicks the submit button
 
