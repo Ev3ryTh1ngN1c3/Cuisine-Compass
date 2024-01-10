@@ -6,12 +6,20 @@ const spoonApiKey = "497c7229c7814b50a5c35eabba55735b"; // API key for Spoonacul
 const recipeInput = document.querySelector('.recipe-input'); // The Search Bar
 const searchButton = document.querySelector('.search-button'); // The Search Button
 
-// var recipeSearch = []; //Declare a variable to store the searched recipe
+var recipeSearch = []; //Declare a variable to store the searched recipe
 
 const getRecipe = () => {
+const storedRecipe = JSON.parse(localStorage.getItem('recipeSearch'));
+if(storedRecipe !== null){
+  recipeSearch = storedRecipe;
+}
+console.log(storedRecipe);
+console.log(recipeSearch);
 
 const recipeName = recipeInput.value.trim(); // Get user entered recipe and remove extra spaces
-   
+   recipeSearch.push(recipeName); //adding the recipe searched to recipeName data
+   localStorage.setItem("recipeSearch", JSON.stringify(recipeSearch)); //readding the recent search to current search
+
   //Function is pushing information into an array, info is also saved regardless of refresh
   function saveRecipe() {
 
@@ -25,7 +33,7 @@ const recipeName = recipeInput.value.trim(); // Get user entered recipe and remo
     }
 
   }
-    localStorage.setItem("recipeName", recipeName);  // Storing Recipes Input in Local Storage
+    localStorage.setItem("recipeName", JSON.stringify(recipeName));  // Storing Recipes Input in Local Storage
     if (!recipeName) return;  // Return if recipeName is empty
     const EdmamamAPIUrl = "https://api.edamam.com/api/recipes/v2?type=public&q=" + recipeName + "&app_id=" + EdmamamAPIid + "&app_key=" + EdmamamAPIkey;
     

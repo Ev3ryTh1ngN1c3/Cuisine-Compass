@@ -1,38 +1,33 @@
 const recipeInput = document.querySelector('.recipe-input'); // The Search Bar
-//adding the recent searches to page
+
+//Adding the recent searches to page
 function recentSearch() {
 
     // Reach the recentSearches div within the HTML
-    var recentSearches = document.getElementById("recentSearchList");
+    var recentSearches = document.getElementById("recipes");
 
+    //Get recent receipes from localstorage or set to empty array
 
-    // either get receipes from localstorage or set to empty array
-    var recentRecipes = localStorage.getItem('recipeSearch') || [];
-    // localStorage.setItem('recipeSearch', recipeSearch);
-
-    // Clear the recentSearches div before adding new elements
-    // recentSearches.innerHTML = "";
-
+    var recentRecipes = JSON.parse(localStorage.getItem('recipeSearch'));
+   
+    console.log(recentRecipes);
+   
     // Create a card element for recent searches
     var card = document.createElement("div");
     card.classList.add("card");
-    card.classList.add("has-background-orange-light");
+    card.classList.add("has-background-orange");
 
-    // Create a card title for recent searches
-    var cardTitle = document.createElement("p");
-    cardTitle.classList.add("title");
-    cardTitle.textContent = "Your Recent Recipe Searches";
-    card.appendChild(cardTitle);
+    recentRecipes.forEach(function (recipeSearch) {
 
-  //   recipeSearch.forEach(function (recipeSearch) {
+    var RecipeList = document.createElement("li");
+    RecipeList.textContent = recipeSearch;
+    card.appendChild(RecipeList);
+      document.querySelector('recipes');
+      recipes.style.backgroundColor = '';
+      recipes.style.color = 'orange';
+  });
 
-  //   var RecipeList = document.createElement("li");
-  //   RecipeList.textContent = receipeSearched;
-  //   card.appendChild(RecipeList);
-
-  // });
-
-  // recentSearches.appendChild(card);
+  recentSearches.appendChild(card);
   }
   
   function clearRecipes() {
