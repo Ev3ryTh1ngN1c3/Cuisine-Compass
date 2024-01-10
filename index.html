@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Cuisine Compass</title>
 </head>
 
@@ -12,8 +12,13 @@
 
      <!-- The Header -->
     <header>
-    <nav class="flex h-36">
-        <img src="assets/images/cuisine (1).png" class=" object-fill w-33 md:w-46 cursor-pointer">
+    <nav class="flex h-100">
+        <img src="assets/images/cuisine (1).png" class="object-fill w-33 md:w-46 cursor-pointer">
+        
+        <div class="hidden w-full md:block md:w-auto flex md:flex md:flex-grow flex-row justify-end space-x-1" id="navbar-default">
+            <a href="./recipes.html" class="recent-searches flex-col p-4 md:p-0 mt-4 px-3 font-medium text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Recent Searches</a>
+        </div>
+    
     </nav>
     </header>
 
@@ -38,8 +43,8 @@
     </div>
 </form>
 
-<!-- Styling for the Search Button -->  
-<button class="search-button bg-orange-400 rounded-3xl py-4 px-10 font-medium inline-block mr-4 hover:bg-transparent hover:border-orange-400 
+    <!-- Styling for the Search Button -->  
+    <button class="search-button bg-orange-400 rounded-3xl py-4 px-10 font-medium inline-block mr-4 hover:bg-transparent hover:border-orange-400 
         hover:text-white duration-300 hover:border border-transparent">Search Recipe</button>
     </div>
     </div>
@@ -51,13 +56,18 @@
     <table id="recipes" class="text-white text-xl ml-24 bg-origin-border bg-black/50 underline list-inside rounded-lg list-disc"></table>
 </main>
 
+ <!-- Recent Searched Recipes -->
+<div class="recentSearches container is-flex is-align-items-center is-justify-content-center has-text-centered">
+<h1 style="display: none">Your Recent Recipe Searches</h1>
+<ul id="recentSearchList" class="text-white text-xl ml-24 bg-origin-border bg-black/50 underline list-inside rounded-lg list-disc"></ul>
+</div>
+
  <!-- Styled Footer -->
 <footer class="h-10 justiy-self-end bg-black/50 text-center">
-    <span> <span class="text-white text-sm">Created with ❤️ by Tina Humphrey, Roy Reid, Devonte Miller & Lisa Brongo </span>
-    
+    <span class="text-white text-sm">Created with ❤️ by Tina Humphrey, Roy Reid, Devonte Miller & Lisa Brongo </span>
 </footer>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/js/script.js"></script> 
-</body>
 
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="./assets/js/javascript.js"></script> 
+</body>
 </html>
